@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>A Rainy Walk Home</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>A Rainy Walk Home</h1>
+        <p>A small journey from a rainy street to the quiet of home.</p>
+      </header>
+      <section class="scene street" id="scene" aria-label="Rainy street scene">
+        <img src="assets/rain.png" alt="Rain-speckled blossoms on a tree branch">
+        <div class="window-frame" aria-hidden="true">
+        </div>
+        <div class="shade" aria-hidden="true">
+        </div>
+        <div class="caption">
+          <span id="location">OUTSIDE</span>
+          <h2 id="scene-title">Along the street</h2>
+          <p id="description">Rain falls. Cars pass in the distance.</p>
+        </div>
+      </section>
+      <section class="player" aria-label="Soundscape player">
+        <audio id="audio" preload="metadata" src="assets/rainy-walk-home.mp3">Your browser does not support audio.</audio>
+        <div class="playback">
+          <button id="toggle" type="button">Play</button>
+          <span id="clock">0:00 / 1:15</span>
+          <input id="seek" type="range" min="0" max="75" step="0.01" value="0" aria-label="Playback position">
+          <select id="speed" aria-label="Playback speed">
+            <option value="0.75">Speed: 0.75×</option>
+            <option value="1" selected>Speed: 1×</option>
+            <option value="1.25">Speed: 1.25×</option>
+            <option value="1.5">Speed: 1.5×</option>
+            <option value="2">Speed: 2×</option>
+          </select>
+        </div>
+        <p id="status" aria-live="polite">Press play to begin the 75-second journey.</p>
+        <nav aria-label="Jump to a scene">
+          <button type="button" data-time="0" aria-current="true">Street <span>0:00</span></button>
+          <button type="button" data-time="25">Walking home <span>0:25</span></button>
+          <button type="button" data-time="44">At the door <span>0:44</span></button>
+          <button type="button" data-time="50.44">Inside <span>0:50</span></button>
+        </nav>
+      </section>
+      <footer>Lab 5 · Interactive Media</footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
